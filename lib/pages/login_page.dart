@@ -12,7 +12,8 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  void _login() {
+  void _login() async {
+    var email = await emailController.text;
     if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
       Navigator.pushReplacement(
         context,
